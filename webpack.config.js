@@ -1,21 +1,26 @@
-const webpack = require('webpack')
 const { resolve } = require('path')
 
 module.exports = {
-  name: '@latticehr/react-org-chart',
+  name: '@keymastervn/react-org-chart-next',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
     path: resolve(__dirname, 'dist'),
-    library: '@latticehr/react-org-chart',
+    library: '@keymastervn/react-org-chart-next',
     libraryTarget: 'commonjs2'
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties']
+          }
+        }
       }
     ]
   },

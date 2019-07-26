@@ -1,8 +1,8 @@
 {
-  "name": "@latticehr/react-org-chart",
-  "version": "0.1.1",
+  "name": "@keymastervn/react-org-chart-next",
+  "version": "0.1.2",
   "description": "Simple, high-performance react component for d3 org chart",
-  "repository": "https://github.com/latticehr/react-org-chart.git",
+  "repository": "https://github.com/keymastervn/react-org-chart-next.git",
   "main": "dist/index.js",
   "directories": {
     "example": "src/examples"
@@ -15,36 +15,32 @@
     "build-vendor": "webpack --mode production --config webpack.vendor.config.js",
     "clean": "rimraf dist",
     "dev": "npm run build-vendor && webpack-dev-server --mode development --config webpack.dev.config.js",
-    "deploy": "npm run build-vendor && now",
-    "deploy-prod": "npm run deploy && now alias"
+    "publish": "npm run clean && npm run build && npm publish --access=public"
   },
   "keywords": [],
   "author": "Fouad Matin <m@fouad.org>",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
+    "d3": "^5.9.7",
     "faker": "^4.1.0",
     "glob": "^7.1.2",
     "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "rimraf": "^2.6.2",
-    "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.10",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.1.0"
   },
   "peerDependencies": {
     "d3": ">= 3.x < 4",
     "react": ">= 15.x",
     "react-dom": ">= 15.x"
-  },
-  "babel": {
-    "presets": [
-      "env",
-      "stage-2"
-    ]
   }
 }

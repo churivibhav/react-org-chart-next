@@ -159,7 +159,7 @@ function render(config) {
   const nodeLink = nodeEnter
     .append('a')
     .attr('class', PERSON_LINK_CLASS)
-    .attr('xlink:href', d => d.person.link || 'https://lattice.com')
+    .attr('xlink:href', d => d.person.link)
     .on('click', datum => {
       d3.event.stopPropagation()
       // TODO: fire link click handler

@@ -27,7 +27,7 @@ const getExamples = () => {
 }
 
 module.exports = {
-  name: 'react-org-chart',
+  name: 'react-org-chart-next',
   cache: true,
   devtool: 'cheap-module-eval-source-map',
   entry: {
@@ -48,13 +48,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties']
+          }
+        }
       }
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   }
 }

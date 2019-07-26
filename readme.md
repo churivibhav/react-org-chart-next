@@ -1,4 +1,10 @@
-# react-org-chart
+# react-org-chart-next
+
+### Note
+
+This repository is an effort to make it work with `es6` `import`.
+
+It can be deprecated or private-used by the owner or the organization owner.
 
 ### Features
 
@@ -8,11 +14,11 @@
 
 ### React Props
 
-| **property**      | **type** | **description**                                                                    | **example**                                                                    |
-| ----------------- | -------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| tree              | `Object` | Nested data model with all of the employees in the company (Required)              | { "id": 123, "person": { "name": "Fouad Matin" }, "children": [] } |                                                                 |
-| nodeWidth         | `Number` | Width of the component for each individual (Optional)                              | 180                                                                            |
-| nodeHeight        | `Number` | Height of the component for each individual (Optional)                             | 100                                                                             |
-| nodeSpacing       | `Number` | Spacing between each of the nodes in the chart (Optional)                             | 12                                                                             |
-| animationDuration | `Number` | Duration of the animations in milliseconds (Optional)                              | 350                                                                            |
-| lineType          | `String` | Type of line that connects the nodes to each other (Optional)                      | “angle” “curve” 
+| **property**      | **type** | **description**                                                       | **example**                                                        |
+| ----------------- | -------- | --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| tree              | `Object` | Nested data model with all of the employees in the company (Required) | { "id": 123, "person": { "name": "Fouad Matin" }, "children": [] } |  |
+| nodeWidth         | `Number` | Width of the component for each individual (Optional)                 | 180                                                                |
+| nodeHeight        | `Number` | Height of the component for each individual (Optional)                | 100                                                                |
+| nodeSpacing       | `Number` | Spacing between each of the nodes in the chart (Optional)             | 12                                                                 |
+| animationDuration | `Number` | Duration of the animations in milliseconds (Optional)                 | 350                                                                |
+| lineType          | `String` | Type of line that connects the nodes to each other (Optional)         | “angle” “curve”                                                    |

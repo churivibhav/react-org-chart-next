@@ -6,6 +6,17 @@ This repository is an effort to make it work with `es6` `import`.
 
 It can be deprecated or private-used by the owner or the organization owner.
 
+### Usage
+
+```
+import * as OrgChart from '@keymastervn/react-org-chart-next'
+
+...
+
+<OrgChart tree={data} lineType="angle" />
+
+```
+
 ### Features
 
 - High-performance D3-based SVG rendering

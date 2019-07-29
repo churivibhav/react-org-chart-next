@@ -32,6 +32,7 @@ function init(options) {
     nodeHeight,
     nodeSpacing,
     style,
+    className,
     shouldResize
   } = config
 
@@ -63,6 +64,11 @@ function init(options) {
     }
   }
   css(elem, style)
+
+  // Apply className props
+  if (className) {
+    elem.className = className
+  }
 
   // Reset in case there's any existing DOM
   elem.innerHTML = ''

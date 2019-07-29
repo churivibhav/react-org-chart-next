@@ -34,6 +34,8 @@ const style = {
   width: '100%'
 }
 
+const className = undefined
+
 const config = {
   margin,
   animationDuration,
@@ -52,6 +54,7 @@ const config = {
   titleColor,
   reportsColor,
   style,
+  className,
   shouldResize
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@keymastervn/react-org-chart-next",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Simple, high-performance react component for d3 org chart",
   "repository": "https://github.com/keymastervn/react-org-chart-next.git",
   "main": "dist/index.js",
@@ -19,6 +19,9 @@
   "keywords": [],
   "author": "Fouad Matin <m@fouad.org>",
   "license": "MIT",
+  "dependencies": {
+    "d3": "^3.5.17"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -26,7 +29,6 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
-    "d3": "^3.5.17",
     "faker": "^4.1.0",
     "glob": "^7.1.2",
     "lodash": "^4.17.5",

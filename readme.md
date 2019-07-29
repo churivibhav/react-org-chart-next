@@ -13,7 +13,10 @@ import * as OrgChart from '@keymastervn/react-org-chart-next'
 
 ...
 
-<OrgChart tree={data} lineType="angle" style={{ cursor: move, height: '100%', width: '100%' }} />
+render() {
+  return <OrgChart tree={data} lineType="angle" style={{ cursor: "move", height: "100%", width: "100%" }} />
+}
+
 
 ```
 
@@ -34,4 +37,4 @@ import * as OrgChart from '@keymastervn/react-org-chart-next'
 | animationDuration | `Number` | Duration of the animations in milliseconds (Optional)                 | 350                                                                |
 | lineType          | `String` | Type of line that connects the nodes to each other (Optional)         | “angle” “curve”                                                    |
 | className         | `String` | Define the classes for the root element (Optional)                    | “rc-chart”                                                         |
-| style             | `Object` | Define styling for the root element (Optional)                        | { cursor: move, height: "100%", width: "100%" }                    |
+| style             | `Object` | Define styling for the root element (Optional)                        | { cursor: "move", height: "100%", width: "100%" }                  |

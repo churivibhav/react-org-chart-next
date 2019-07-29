@@ -1,6 +1,6 @@
 {
   "name": "@keymastervn/react-org-chart-next",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple, high-performance react component for d3 org chart",
   "repository": "https://github.com/keymastervn/react-org-chart-next.git",
   "main": "dist/index.js",

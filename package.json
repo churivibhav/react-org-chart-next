@@ -1,6 +1,6 @@
 {
   "name": "@keymastervn/react-org-chart-next",
-  "version": "0.1.2",
+  "version": "0.1.11",
   "description": "Simple, high-performance react component for d3 org chart",
   "repository": "https://github.com/keymastervn/react-org-chart-next.git",
   "main": "dist/index.js",
@@ -14,8 +14,7 @@
     "build": "webpack --mode production",
     "build-vendor": "webpack --mode production --config webpack.vendor.config.js",
     "clean": "rimraf dist",
-    "dev": "npm run build-vendor && webpack-dev-server --mode development --config webpack.dev.config.js",
-    "publish": "npm run clean && npm run build && npm publish --access=public"
+    "dev": "npm run build-vendor && webpack-dev-server --mode development --config webpack.dev.config.js"
   },
   "keywords": [],
   "author": "Fouad Matin <m@fouad.org>",

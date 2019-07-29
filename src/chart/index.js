@@ -31,6 +31,7 @@ function init(options) {
     nodeWidth,
     nodeHeight,
     nodeSpacing,
+    style,
     shouldResize
   } = config
 
@@ -50,6 +51,19 @@ function init(options) {
     return
   }
 
+  // Apply style props
+  const css = (el, styles) => {
+    for (const property in styles) {
+      const value =
+        typeof styles[property] === 'number'
+          ? `${styles[property]}px`
+          : styles[property]
+
+      el.style[property] = value
+    }
+  }
+  css(elem, style)
+
   // Reset in case there's any existing DOM
   elem.innerHTML = ''
 
@@ -62,7 +76,7 @@ function init(options) {
     .nodeSize([nodeWidth + nodeSpacing, nodeHeight + nodeSpacing])
 
   // Calculate width of a node with expanded children
-  const childrenWidth = parseInt(treeData.children.length * nodeWidth / 2)
+  const childrenWidth = parseInt((treeData.children.length * nodeWidth) / 2)
 
   // Add svg root for d3
   const svgroot = d3

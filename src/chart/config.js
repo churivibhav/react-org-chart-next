@@ -27,6 +27,13 @@ const nameColor = '#222d38'
 const titleColor = '#617080'
 const reportsColor = '#92A0AD'
 
+// style
+const style = {
+  cursor: 'move',
+  height: '100%',
+  width: '100%'
+}
+
 const config = {
   margin,
   animationDuration,
@@ -44,6 +51,7 @@ const config = {
   nameColor,
   titleColor,
   reportsColor,
+  style,
   shouldResize
 }
 

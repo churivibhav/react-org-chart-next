@@ -24,6 +24,7 @@ function render(config) {
     backgroundColor,
     nameColor,
     titleColor,
+    departmentColor,
     reportsColor,
     borderColor,
     avatarWidth,
@@ -99,7 +100,8 @@ function render(config) {
     .attr('dy', '.3em')
     .style('cursor', 'pointer')
     .style('fill', nameColor)
-    .style('font-size', 16)
+    .style('font-size', 15)
+    .style('font-weight', 700)
     .text(d => d.person.name)
 
   // Person's Title
@@ -107,9 +109,10 @@ function render(config) {
     .append('text')
     .attr('class', PERSON_TITLE_CLASS + ' unedited')
     .attr('x', namePos.x)
-    .attr('y', namePos.y + nodePaddingY * 1.2)
+    .attr('y', namePos.y + nodePaddingY * 1.3)
     .attr('dy', '0.1em')
-    .style('font-size', 14)
+    .style('font-size', 15)
+    .style('font-weight', 400)
     .style('cursor', 'pointer')
     .style('fill', titleColor)
     .text(d => d.person.title)
@@ -146,11 +149,12 @@ function render(config) {
     .append('text')
     .attr('class', getDepartmentClass)
     .attr('x', namePos.x)
-    .attr('y', avatarWidth + nodePaddingY * 2.4)
+    .attr('y', avatarWidth + nodePaddingY * 2)
     .attr('dy', '0.1em')
     .style('cursor', 'pointer')
-    .style('fill', titleColor)
-    .style('font-size', 14)
+    .style('fill', departmentColor)
+    .style('font-weight', 400)
+    .style('font-size', 15)
     .text(helpers.getTextForDepartment)
 
   // Person's Link

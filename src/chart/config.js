@@ -7,7 +7,7 @@ const nodeHeight = 120
 const nodeSpacing = 12
 const nodePaddingX = 16
 const nodePaddingY = 16
-const avatarWidth = 40
+const avatarWidth = 48
 const nodeBorderRadius = 4
 const margin = {
   top: 20,
@@ -23,10 +23,11 @@ const lineDepthY = 120 /* Height of the line for child nodes */
 // Colors
 const backgroundColor = '#fff'
 const borderColor = '#e6e8e9'
-const nameColor = '#222d38'
-const titleColor = '#617080'
+const nameColor = '#332212'
+const titleColor = '#332212'
 const reportsColor = '#92A0AD'
 const lineColor = '#951b81'
+const departmentColor = '#89827B'
 
 // style
 const style = {
@@ -53,6 +54,7 @@ const config = {
   borderColor,
   nameColor,
   titleColor,
+  departmentColor,
   reportsColor,
   lineColor,
   style,

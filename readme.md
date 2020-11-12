@@ -2,19 +2,18 @@
 
 ### Note
 
-This repository is an effort to make it work with `es6` `import`.
-
+This is a form of @keymastervn/react-org-chart-next that has been customized to fit our needs.
 It can be deprecated or private-used by the owner or the organization owner.
 
 ### Usage
 
 ```
-import * as OrgChart from '@keymastervn/react-org-chart-next'
+import * as OrgChart from '@fx2000/react-org-chart-next'
 
 ...
 
 render() {
-  return <OrgChart tree={data} lineType="angle" style={{ cursor: "move", height: "100%", width: "100%" }} />
+  return <OrgChart tree={data} lineType="angle" style={{ height: "100%", width: "100%" }} />
 }
 
 

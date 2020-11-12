@@ -1,11 +1,14 @@
 {
-  "name": "@keymastervn/react-org-chart-next",
-  "version": "0.2.1",
+  "name": "@fx2000/react-org-chart-next",
+  "version": "0.2.3",
   "description": "Simple, high-performance react component for d3 org chart",
-  "repository": "https://github.com/keymastervn/react-org-chart-next.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fx2000/react-org-chart-next.git"
+  },
   "main": "dist/index.js",
   "directories": {
-    "example": "src/examples"
+    "example": "examples"
   },
   "files": [
     "dist/index.js"
@@ -43,5 +46,9 @@
     "d3": ">= 3.x < 4",
     "react": ">= 15.x",
     "react-dom": ">= 15.x"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/fx2000/react-org-chart-next/issues"
+  },
+  "homepage": "https://github.com/fx2000/react-org-chart-next#readme"
 }

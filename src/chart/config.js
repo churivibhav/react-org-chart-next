@@ -26,6 +26,7 @@ const borderColor = '#e6e8e9'
 const nameColor = '#222d38'
 const titleColor = '#617080'
 const reportsColor = '#92A0AD'
+const lineColor = '#951b81'
 
 // style
 const style = {
@@ -53,6 +54,7 @@ const config = {
   nameColor,
   titleColor,
   reportsColor,
+  lineColor,
   style,
   className,
   shouldResize

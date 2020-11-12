@@ -9,7 +9,7 @@ function renderLines(config = {}) {
     margin,
     nodeWidth,
     nodeHeight,
-    borderColor,
+    lineColor,
     sourceNode,
     treeData,
     lineType,
@@ -42,9 +42,9 @@ function renderLines(config = {}) {
       .insert('path', 'g')
       .attr('class', 'link')
       .attr('fill', 'none')
-      .attr('stroke', borderColor)
+      .attr('stroke', lineColor)
       .attr('stroke-opacity', 0.5)
-      .attr('stroke-width', 1.25)
+      .attr('stroke-width', 1.5)
       .attr('d', d => {
         const linePoints = [
           {
@@ -130,7 +130,7 @@ function renderLines(config = {}) {
       .enter()
       .insert('path', 'g')
       .attr('class', 'link')
-      .attr('stroke', borderColor)
+      .attr('stroke', lineColor)
       .attr('fill', 'none')
       .attr('x', nodeWidth / 2)
       .attr('y', nodeHeight / 2)

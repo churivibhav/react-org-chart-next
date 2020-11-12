@@ -1,12 +1,12 @@
 const { resolve } = require('path')
 
 module.exports = {
-  name: '@keymastervn/react-org-chart-next',
+  name: '@fx2000/react-org-chart-next',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
     path: resolve(__dirname, 'dist'),
-    library: '@keymastervn/react-org-chart-next',
+    library: '@fx2000/react-org-chart-next',
     libraryTarget: 'commonjs2'
   },
   module: {

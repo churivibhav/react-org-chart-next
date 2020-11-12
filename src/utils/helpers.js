@@ -16,7 +16,7 @@ function getTextForTitle(datum) {
   return totalReports
 }
 
-const departmentAbbrMap = {
+/* const departmentAbbrMap = {
   Marketing: 'mktg',
   Operations: 'ops',
   Growth: 'gwth',
@@ -28,7 +28,7 @@ const departmentAbbrMap = {
   Product: 'prod',
   People: 'people',
   Sales: 'sales'
-}
+} */
 
 function getTextForDepartment(datum) {
   if (!datum.person.department) {
@@ -37,11 +37,12 @@ function getTextForDepartment(datum) {
 
   const { department } = datum.person
 
-  if (departmentAbbrMap[department]) {
+  /* if (departmentAbbrMap[department]) {
     return departmentAbbrMap[department].toUpperCase()
-  }
+  } */
 
-  return datum.person.department.substring(0, 3).toUpperCase()
+  /* return datum.person.department.substring(0, 3).toUpperCase() */
+  return department
 }
 
 function getCursorForNode(datum) {

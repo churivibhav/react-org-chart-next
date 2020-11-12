@@ -145,14 +145,12 @@ function render(config) {
   nodeEnter
     .append('text')
     .attr('class', getDepartmentClass)
-    .attr('x', 34)
-    .attr('y', avatarWidth + nodePaddingY * 1.2)
-    .attr('dy', '.9em')
+    .attr('x', namePos.x)
+    .attr('y', avatarWidth + nodePaddingY * 2.4)
+    .attr('dy', '0.1em')
     .style('cursor', 'pointer')
     .style('fill', titleColor)
-    .style('font-weight', 600)
-    .style('font-size', 8)
-    .attr('text-anchor', 'middle')
+    .style('font-size', 14)
     .text(helpers.getTextForDepartment)
 
   // Person's Link

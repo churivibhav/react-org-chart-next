@@ -39,7 +39,7 @@ function init(options) {
   // Calculate how many pixel nodes to be spaced based on the
   // type of line that needs to be rendered
   if (lineType == 'angle') {
-    config.lineDepthY = nodeHeight + 40
+    config.lineDepthY = nodeHeight + 80
   } else {
     config.lineDepthY = nodeHeight + 60
   }

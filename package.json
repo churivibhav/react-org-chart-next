@@ -1,6 +1,6 @@
 {
   "name": "@fx2000/react-org-chart-next",
-  "version": "0.2.4",
+  "version": "0.2.63",
   "description": "Simple, high-performance react component for d3 org chart",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "dev": "npm run build-vendor && webpack-dev-server --mode development --config webpack.dev.config.js"
   },
   "keywords": [],
-  "author": "Fouad Matin <m@fouad.org>",
+  "author": "Daniel Duque <duque@outlook.com>",
   "license": "MIT",
   "dependencies": {
     "d3": "^3.5.17"

@@ -27,6 +27,7 @@ function render(config) {
     departmentColor,
     reportsColor,
     borderColor,
+    lineColor,
     avatarWidth,
     lineDepthY,
     treeData,
@@ -63,8 +64,9 @@ function render(config) {
   // Person Card Shadow
   nodeEnter
     .append('rect')
+    .attr('y', (avatarWidth / 2))
     .attr('width', nodeWidth)
-    .attr('height', nodeHeight)
+    .attr('height', nodeHeight + 15)
     .attr('fill', backgroundColor)
     .attr('stroke', borderColor)
     .attr('rx', nodeBorderRadius)
@@ -76,31 +78,54 @@ function render(config) {
   // Person Card Container
   nodeEnter
     .append('rect')
+    .attr('y', (avatarWidth / 2))
     .attr('width', nodeWidth)
-    .attr('height', nodeHeight)
+    .attr('height', nodeHeight + 15)
     .attr('id', d => d.id)
     .attr('fill', backgroundColor)
     .attr('stroke', borderColor)
     .attr('rx', nodeBorderRadius)
     .attr('ry', nodeBorderRadius)
-    .style('cursor', helpers.getCursorForNode)
+    .style('cursor', 'default')
     .attr('class', 'box')
 
+  const avatarPos = {
+    x: nodeWidth / 2 - avatarWidth / 2,
+    y: 0,
+  }
+
   const namePos = {
-    x: nodePaddingX * 1.4 + avatarWidth,
-    y: nodePaddingY * 1.8
+    x: nodeWidth / 2,
+    y: nodePaddingY + avatarWidth + 8
+  }
+
+  const titlePos = {
+    x: nodeWidth / 2,
+    y: namePos.y + (nodePaddingY * 1.4)
+  }
+
+  const departmentPos = {
+    x: nodeWidth / 2,
+    y: titlePos.y + (nodePaddingY * 1.3)
+  }
+
+  const reportsPos = {
+    x: nodeWidth / 2,
+    y: nodeHeight + 15 + nodePaddingY
   }
 
   // Person's Name
   nodeEnter
+    .append('a')
+    .attr('xlink:href', d => d.person.link)
     .append('text')
-    .attr('class', PERSON_NAME_CLASS)
+    .attr('class', PERSON_NAME_CLASS + ' unedited')
     .attr('x', namePos.x)
     .attr('y', namePos.y)
     .attr('dy', '.3em')
-    .style('cursor', 'pointer')
+    .style('cursor', 'default')
     .style('fill', nameColor)
-    .style('font-size', 15)
+    .style('font-size', 14)
     .style('font-weight', 700)
     .text(d => d.person.name)
 
@@ -108,60 +133,72 @@ function render(config) {
   nodeEnter
     .append('text')
     .attr('class', PERSON_TITLE_CLASS + ' unedited')
-    .attr('x', namePos.x)
-    .attr('y', namePos.y + nodePaddingY * 1.3)
+    .attr('x', titlePos.x)
+    .attr('y', titlePos.y)
     .attr('dy', '0.1em')
-    .style('font-size', 15)
+    .style('font-size', 14)
     .style('font-weight', 400)
-    .style('cursor', 'pointer')
+    .style('cursor', 'default')
     .style('fill', titleColor)
     .text(d => d.person.title)
 
-  const heightForTitle = 45 // getHeightForText(d.person.title)
+/*   const heightForTitle = 45 // getHeightForText(d.person.title) */
+
+  // Person's Department
+  nodeEnter
+    .append('text')
+    .attr('class', PERSON_DEPARTMENT_CLASS + ' unedited')
+    .attr('x', departmentPos.x)
+    .attr('y', departmentPos.y)
+    .attr('dy', '0.1em')
+    .style('cursor', 'default')
+    .style('fill', departmentColor)
+    .style('font-weight', 400)
+    .style('font-size', 14)
+    .text(helpers.getTextForDepartment)
+
+  // Reports circle background
+  nodeEnter
+    .append('circle')
+    .attr('display', d => (d.person.totalReports > 0 ? '' : 'none'))
+    .attr('fill', lineColor)
+    .attr('cx', reportsPos.x)
+    .attr('cy', reportsPos.y + 10)
+    .attr('r', 12)
 
   // Person's Reports
   nodeEnter
     .append('text')
-    .attr('class', PERSON_REPORTS_CLASS)
-    .attr('x', namePos.x)
-    .attr('y', namePos.y + nodePaddingY + heightForTitle)
+    .attr('class', PERSON_REPORTS_CLASS + ' unedited')
+    .attr('x', reportsPos.x)
+    .attr('y', reportsPos.y + 4)
     .attr('dy', '.9em')
-    .style('font-size', 14)
-    .style('font-weight', 500)
-    .style('cursor', 'pointer')
-    .style('fill', reportsColor)
+    .style('font-size', 13)
+    .style('font-weight', 700)
+    .style('color', '#FFFFFF')
+    .style('cursor', 'default')
+    .style('fill', '#FFFFFF')
     .text(helpers.getTextForTitle)
 
   // Person's Avatar
   nodeEnter
     .append('image')
+    .attr('id', d => `image-${d.id}`)
     .attr('width', avatarWidth)
     .attr('height', avatarWidth)
-    .attr('x', nodePaddingX)
-    .attr('y', nodePaddingY)
+    .attr('x', avatarPos.x)
+    .attr('y', avatarPos.y)
     .attr('stroke', borderColor)
     .attr('src', d => d.person.avatar)
-    .attr('xlink:href', d => d.person.avatar)
+    .attr('href', d => d.person.avatar)
     .attr('clip-path', 'url(#avatarClip)')
 
-  // Person's Department
-  nodeEnter
-    .append('text')
-    .attr('class', getDepartmentClass)
-    .attr('x', namePos.x)
-    .attr('y', avatarWidth + nodePaddingY * 2)
-    .attr('dy', '0.1em')
-    .style('cursor', 'pointer')
-    .style('fill', departmentColor)
-    .style('font-weight', 400)
-    .style('font-size', 15)
-    .text(helpers.getTextForDepartment)
-
-  // Person's Link
+/*   // Person's Link
   const nodeLink = nodeEnter
     .append('a')
     .attr('class', PERSON_LINK_CLASS)
     .attr('xlink:href', d => d.person.link)
+    .attr('display', d => (d.person.link ? '' : 'none'))
     .on('click', datum => {
       d3.event.stopPropagation()
       // TODO: fire link click handler
@@ -172,9 +209,9 @@ function render(config) {
 
   iconLink({
     svg: nodeLink,
-    x: nodeWidth - 28,
-    y: nodeHeight - 28
-  })
+    x: nodeWidth - 20,
+    y: 8
+  }) */
 
   // Transition nodes to their new position.
   const nodeUpdate = node
@@ -201,7 +238,10 @@ function render(config) {
   // Wrap the title texts
   const wrapWidth = 140
 
+  svg.selectAll('text.unedited.' + PERSON_NAME_CLASS).call(wrapText, wrapWidth)
   svg.selectAll('text.unedited.' + PERSON_TITLE_CLASS).call(wrapText, wrapWidth)
+  svg.selectAll('text.unedited.' + PERSON_DEPARTMENT_CLASS).call(wrapText, wrapWidth)
+  svg.selectAll('text.unedited.' + PERSON_REPORTS_CLASS).call(wrapText, wrapWidth)
 
   // Render lines connecting nodes
   renderLines(config)
@@ -213,11 +253,11 @@ function render(config) {
   })
 }
 
-function getDepartmentClass(d) {
+/* function getDepartmentClass(d) {
   const { person } = d
   const deptClass = person.department ? person.department.toLowerCase() : ''
 
   return [PERSON_DEPARTMENT_CLASS, deptClass].join(' ')
-}
+} */
 
 module.exports = render

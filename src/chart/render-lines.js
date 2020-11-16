@@ -43,7 +43,7 @@ function renderLines(config = {}) {
       .attr('class', 'link')
       .attr('fill', 'none')
       .attr('stroke', lineColor)
-      .attr('stroke-opacity', 0.5)
+      .attr('stroke-opacity', 1)
       .attr('stroke-width', 1.5)
       .attr('d', d => {
         const linePoints = [
@@ -53,11 +53,11 @@ function renderLines(config = {}) {
           },
           {
             x: d.source.x0 + parseInt(nodeWidth / 2),
-            y: d.source.y0 + nodeHeight + 2
+            y: d.source.y0 + nodeHeight + 25
           },
           {
             x: d.source.x0 + parseInt(nodeWidth / 2),
-            y: d.source.y0 + nodeHeight + 2
+            y: d.source.y0 + nodeHeight + 25
           },
           {
             x: d.source.x0 + parseInt(nodeWidth / 2),
@@ -88,7 +88,7 @@ function renderLines(config = {}) {
           },
           {
             x: d.target.x + parseInt(nodeWidth / 2),
-            y: d.target.y
+            y: d.target.y + 100
           }
         ]
 

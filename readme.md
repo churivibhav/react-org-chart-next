@@ -2,7 +2,7 @@
 
 ### Note
 
-This is a fork of @keymastervn/react-org-chart-next that has been customized to fit our needs.
+This is a fork of @keymastervn/react-org-chart-next that has been customized to fit our needs since the original package appears to be abandoned.
 It can be deprecated or private-used by the owner or the organization owner.
 
 ### Usage

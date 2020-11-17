@@ -37,6 +37,7 @@ function init(options) {
     zoomInId,
     zoomOutId,
     zoomExtentId,
+    loadConfig
   } = config
 
   // Calculate how many pixel nodes to be spaced based on the

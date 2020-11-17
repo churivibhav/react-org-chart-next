@@ -38,6 +38,8 @@ const style = {
 
 const className = undefined
 
+const hasDepartment = true
+
 const config = {
   margin,
   animationDuration,
@@ -59,7 +61,8 @@ const config = {
   lineColor,
   style,
   className,
-  shouldResize
+  shouldResize,
+  hasDepartment
 }
 
 module.exports = config

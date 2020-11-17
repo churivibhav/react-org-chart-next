@@ -32,7 +32,8 @@ function render(config) {
     lineDepthY,
     treeData,
     sourceNode,
-    onPersonLinkClick
+    onPersonLinkClick,
+    hasDepartment
   } = config
 
   // Compute the new tree layout.
@@ -122,7 +123,7 @@ function render(config) {
     .attr('class', PERSON_NAME_CLASS + ' unedited')
     .attr('x', namePos.x)
     .attr('y', namePos.y)
-    .attr('dy', '.3em')
+    .attr('dy', '0em')
     .style('cursor', 'default')
     .style('fill', nameColor)
     .style('font-size', 14)
@@ -135,7 +136,7 @@ function render(config) {
     .attr('class', PERSON_TITLE_CLASS + ' unedited')
     .attr('x', titlePos.x)
     .attr('y', titlePos.y)
-    .attr('dy', '0.1em')
+    .attr('dy', '1em')
     .style('font-size', 14)
     .style('font-weight', 400)
     .style('cursor', 'default')
@@ -145,12 +146,13 @@ function render(config) {
 /*   const heightForTitle = 45 // getHeightForText(d.person.title) */
 
   // Person's Department
-  nodeEnter
+  hasDepartment && nodeEnter
     .append('text')
     .attr('class', PERSON_DEPARTMENT_CLASS + ' unedited')
+    .attr('title', helpers.getTextForDepartment)
     .attr('x', departmentPos.x)
     .attr('y', departmentPos.y)
-    .attr('dy', '0.1em')
+    .attr('dy', '2em')
     .style('cursor', 'default')
     .style('fill', departmentColor)
     .style('font-weight', 400)
@@ -236,7 +238,7 @@ function render(config) {
   const link = svg.selectAll('path.link').data(links, d => d.target.id)
 
   // Wrap the title texts
-  const wrapWidth = 140
+  const wrapWidth = nodeWidth - (nodePaddingX * 2)
 
   svg.selectAll('text.unedited.' + PERSON_NAME_CLASS).call(wrapText, wrapWidth)
   svg.selectAll('text.unedited.' + PERSON_TITLE_CLASS).call(wrapText, wrapWidth)

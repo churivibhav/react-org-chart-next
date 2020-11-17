@@ -117,8 +117,8 @@ function render(config) {
 
   // Person's Name
   nodeEnter
-    .append('a')
-    .attr('xlink:href', d => d.person.link)
+    /* .append('a')
+    .attr('xlink:href', d => d.person.link) */
     .append('text')
     .attr('class', PERSON_NAME_CLASS + ' unedited')
     .attr('x', namePos.x)

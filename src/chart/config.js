@@ -40,6 +40,10 @@ const className = undefined
 
 const hasDepartment = true
 
+const zoomInId = 'zoom-in'
+const zoomOutId = 'zoom-out'
+const zoomExtentId = 'zoom-extent'
+
 const config = {
   margin,
   animationDuration,
@@ -62,7 +66,10 @@ const config = {
   style,
   className,
   shouldResize,
-  hasDepartment
+  hasDepartment,
+  zoomInId,
+  zoomOutId,
+  zoomExtentId
 }
 
 module.exports = config

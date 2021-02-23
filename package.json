@@ -1,6 +1,6 @@
 {
   "name": "@fx2000/react-org-chart-next",
-  "version": "0.2.74",
+  "version": "0.2.79",
   "description": "Simple, high-performance react component for d3 org chart",
   "repository": {
     "type": "git",

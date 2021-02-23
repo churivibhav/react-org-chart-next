@@ -117,14 +117,14 @@ function render(config) {
 
   // Person's Name
   nodeEnter
-    /* .append('a')
-    .attr('xlink:href', d => d.person.link) */
+    .append('a')
+    .attr('xlink:href', d => d.person.link)
     .append('text')
     .attr('class', PERSON_NAME_CLASS + ' unedited')
     .attr('x', namePos.x)
     .attr('y', namePos.y)
     .attr('dy', '0em')
-    .style('cursor', 'default')
+    .style('cursor', 'pointer')
     .style('fill', nameColor)
     .style('font-size', 14)
     .style('font-weight', 700)

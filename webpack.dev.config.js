@@ -28,8 +28,10 @@ const getExamples = () => {
 
 module.exports = {
   name: 'react-org-chart-next',
-  cache: true,
-  devtool: 'cheap-module-eval-source-map',
+  cache: {
+    type: 'filesystem'
+  },
+  devtool: 'eval-cheap-module-source-map',
   entry: {
     index: './src/index',
     ...getExamples()
@@ -54,7 +56,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties']
+            plugins: ['@babel/plugin-transform-class-properties']
           }
         }
       }

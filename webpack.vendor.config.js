@@ -36,7 +36,10 @@ module.exports = [
     output: {
       path: resolve(__dirname, 'dist'),
       filename: 'vendor.bundle.js',
-      library: 'vendor'
+      library: {
+        name: 'vendor',
+        type: 'var'
+      }
     },
     plugins: [
       new webpack.DllPlugin({
@@ -71,7 +74,7 @@ module.exports = [
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
-              plugins: ['@babel/plugin-proposal-class-properties']
+              plugins: ['@babel/plugin-transform-class-properties']
             }
           }
         }

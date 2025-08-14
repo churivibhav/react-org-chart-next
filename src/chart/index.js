@@ -110,10 +110,10 @@ function init(options) {
     )
 
   // Define box shadow and avatar border radius
-  defineBoxShadow(svgroot, 'boxShadow')
-  defineAvatarClip(svgroot, 'avatarClip', {
-    borderRadius: 40
-  })
+    defineBoxShadow(svgroot, 'boxShadow')
+  // defineAvatarClip(svgroot, 'avatarClip', {
+  //   borderRadius: 40
+  // })
 
   // Center the viewport on initial load
   treeData.x0 = 0

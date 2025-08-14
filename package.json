@@ -1,10 +1,10 @@
 {
-  "name": "@fx2000/react-org-chart-next",
-  "version": "0.2.79",
+  "name": "@churivibhav/react-org-chart-next",
+  "version": "0.3.0",
   "description": "Simple, high-performance react component for d3 org chart",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fx2000/react-org-chart-next.git"
+    "url": "git+https://github.com/churivibhav/react-org-chart-next.git"
   },
   "main": "dist/index.js",
   "directories": {
@@ -17,10 +17,23 @@
     "build": "webpack --mode production",
     "build-vendor": "webpack --mode production --config webpack.vendor.config.js",
     "clean": "rimraf dist",
-    "dev": "npm run build-vendor && webpack-dev-server --mode development --config webpack.dev.config.js"
+    "dev": "npm run build-vendor && webpack-dev-server --mode development --config webpack.dev.config.js",
+    "prepublishOnly": "npm run clean && npm run build",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "keywords": [],
-  "author": "Daniel Duque <duque@outlook.com>",
+  "keywords": [
+    "react",
+    "org-chart",
+    "organization-chart",
+    "d3",
+    "organizational-chart",
+    "hierarchy",
+    "tree",
+    "chart",
+    "component"
+  ],
+  "author": "Vibhav Churi <churi.vibhav@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "d3": "^3.5.17"
@@ -48,7 +61,7 @@
     "react-dom": ">= 15.x"
   },
   "bugs": {
-    "url": "https://github.com/fx2000/react-org-chart-next/issues"
+    "url": "https://github.com/churivibhav/react-org-chart-next/issues"
   },
-  "homepage": "https://github.com/fx2000/react-org-chart-next#readme"
+  "homepage": "https://github.com/churivibhav/react-org-chart-next#readme"
 }

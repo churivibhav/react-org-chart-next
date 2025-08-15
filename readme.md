@@ -2,13 +2,12 @@
 
 ### Note
 
-This is a fork of @keymastervn/react-org-chart-next that has been customized to fit our needs since the original package appears to be abandoned.
-It can be deprecated or private-used by the owner or the organization owner.
+This is a fork of @fx2000/react-org-chart-next that has been customized to fit our needs since the original package appears to be abandoned.
 
 ### Usage
 
 ```
-import * as OrgChart from '@fx2000/react-org-chart-next'
+import * as OrgChart from '@churivibhav/react-org-chart-next'
 
 ...
 

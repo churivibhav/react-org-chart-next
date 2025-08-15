@@ -6,7 +6,8 @@ class OrgChart extends PureComponent {
     const { id } = this.props
 
     return createElement('div', {
-      id
+      id,
+      'data-testid': 'org-chart'
     })
   }
 

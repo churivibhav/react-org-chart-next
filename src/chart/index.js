@@ -102,7 +102,7 @@ function init(options) {
       'transform',
       'translate(' +
         parseInt(
-          childrenWidth + (elemWidth - childrenWidth * 2) / 2 - margin.left / 2
+          childrenWidth + (elemWidth - childrenWidth * 2) / 2 - (margin?.left || 20) / 2
         ) +
         ',' +
         20 +
@@ -110,10 +110,10 @@ function init(options) {
     )
 
   // Define box shadow and avatar border radius
-  defineBoxShadow(svgroot, 'boxShadow')
-  defineAvatarClip(svgroot, 'avatarClip', {
-    borderRadius: 40
-  })
+    defineBoxShadow(svgroot, 'boxShadow')
+  // defineAvatarClip(svgroot, 'avatarClip', {
+  //   borderRadius: 40
+  // })
 
   // Center the viewport on initial load
   treeData.x0 = 0
@@ -142,7 +142,7 @@ function init(options) {
   // Define the point of origin for zoom transformations
   zoom.translate([
     parseInt(
-      childrenWidth + (elemWidth - childrenWidth * 2) / 2 - margin.left / 2
+      childrenWidth + (elemWidth - childrenWidth * 2) / 2 - (margin?.left || 20) / 2
     ),
     20
   ])
@@ -193,7 +193,7 @@ function init(options) {
       const chooseScale = scaleX < scaleY ? scaleX : scaleY
       let scale =
         svgWidth > elemWidth || svgHeight > elemHeight ? chooseScale : 1
-      let translateX = nodeLeftX * scale + margin.left / 2
+      let translateX = nodeLeftX * scale + (margin?.left || 20) / 2
 
       if (svgWidth > elemWidth || svgHeight > elemHeight) {
         //If width is more than height
@@ -201,11 +201,11 @@ function init(options) {
           interpolateZoom([translateX, 48], scale)
           //If height is more than width
         } else if (scaleX > scaleY) {
-          translateX = elemWidth / 2 - margin.left / 2
+          translateX = elemWidth / 2 - (margin?.left || 20) / 2
           interpolateZoom([translateX, 48], scale)
         }
       } else {
-        translateX = elemWidth / 2 - margin.left / 2
+        translateX = elemWidth / 2 - (margin?.left || 20) / 2
         interpolateZoom([translateX, 48], scale)
       }
 

@@ -1,4 +1,4 @@
 require('d3')
-require('faker')
+require('@faker-js/faker')
 require('react')
 require('react-dom')

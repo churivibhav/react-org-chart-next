@@ -1,13 +1,15 @@
 const { resolve } = require('path')
 
 module.exports = {
-  name: '@fx2000/react-org-chart-next',
+  name: '@churivibhav/react-org-chart-next',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
     path: resolve(__dirname, 'dist'),
-    library: '@fx2000/react-org-chart-next',
-    libraryTarget: 'commonjs2'
+    library: {
+      name: '@churivibhav/react-org-chart-next',
+      type: 'commonjs2'
+    }
   },
   module: {
     rules: [
@@ -18,7 +20,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties']
+            plugins: ['@babel/plugin-transform-class-properties']
           }
         }
       }

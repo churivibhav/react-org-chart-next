@@ -7,7 +7,7 @@ This is a fork of @fx2000/react-org-chart-next that has been customized to fit o
 ### Usage
 
 ```
-import * as OrgChart from '@fx2000/react-org-chart-next'
+import * as OrgChart from '@churivibhav/react-org-chart-next'
 
 ...
 

@@ -69,5 +69,8 @@
   "bugs": {
     "url": "https://github.com/churivibhav/react-org-chart-next/issues"
   },
-  "homepage": "https://github.com/churivibhav/react-org-chart-next#readme"
+  "homepage": "https://github.com/churivibhav/react-org-chart-next#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
